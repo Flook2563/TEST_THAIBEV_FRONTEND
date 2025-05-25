@@ -17,3 +17,8 @@ export const checkEmailExists = async (email: string): Promise<boolean> => {
   const res = await axios.get(`${API_BASE}/check-email/${encodeURIComponent(email)}`);
   return res.data.exists;
 };
+
+export const deleteProfile = async (user_id: string): Promise<boolean> => {
+  const res = await axios.delete(`${API_BASE}/${encodeURIComponent(user_id)}`);
+  return res.data.exists;
+};
