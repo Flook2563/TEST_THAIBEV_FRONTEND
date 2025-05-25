@@ -147,10 +147,9 @@ export default function UserForm() {
               label="Profile"
               name="profile"
               rules={[
-                { required: false, message: "Please select any profile" },
+                { required: true, message: "Please select any profile" },
               ]}
               valuePropName="value"
-              getValueFromEvent={(_, fileBase64) => fileBase64}
             >
               <ProfileUploader />
             </Form.Item>
