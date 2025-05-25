@@ -22,3 +22,8 @@ export const deleteProfile = async (user_id: string): Promise<boolean> => {
   const res = await axios.delete(`${API_BASE}/${encodeURIComponent(user_id)}`);
   return res.data.exists;
 };
+
+export const getAllUsers = async (): Promise<UserProfileResponse[]> => {
+  const res = await axios.get(`${API_BASE}`);
+  return res.data;
+};
